@@ -1,0 +1,49 @@
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+    @media (max-width:430px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+  .text__section {
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 913px;
+    margin-top: 300px;
+  }
+  
+  .text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+    font-family: "Chakra Petch", sans-serif;
+    background: linear-gradient(90deg, #0cbaf1, #e95ce9, #0cbaf1); /* Градиент */
+    -webkit-background-clip: text; /* Для обрезки фона под текст */
+    -webkit-text-fill-color: transparent; /* Убирает заливку текста */
+    background-size: 200%; /* Увеличиваем область фона для анимации */
+    animation: move-gradient 3s linear infinite; /* Анимация градиента */
+  }
+  
+  @keyframes move-gradient {
+    0% {
+      background-position: 0% 50%; /* Начальная позиция */
+    }
+    100% {
+      background-position: 100% 50%; /* Конечная позиция */
+    }
+  }
+  .h1 {
+    font-size: 48px;
+    font-weight: 600;
+    font-family: "Chakra Petch", sans-serif;
+    line-height: 58px;
+    color: #ffffff;
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+  }
+  

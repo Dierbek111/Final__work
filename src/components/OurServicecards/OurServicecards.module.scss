@@ -1,0 +1,245 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      background: linear-gradient(-5deg, #0cbaf1, #e95ce9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h1 {
+      color: white;
+      font-size: 48px;
+    }
+  }
+}
+
+.p {
+  max-width: 625px;
+  p {
+    color: #9e9e9e;
+  }
+}
+
+.box {
+  display: flex;
+  gap: 30px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.vr {
+  background-color: #25253299;
+  gap: 58px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &:hover .learnMore {
+    bottom: 20px; /* Поднимаем кнопку вверх при наведении */
+    opacity: 1;
+  }
+
+  &:hover::after {
+    background: rgba(0, 0, 0, 0.5); /* Затемнение фона при наведении */
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Начальное состояние без затемнения */
+    transition: background 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  img {
+    width: 100%;
+    max-width: 48px;
+    max-height: 48px;
+    object-fit: cover;
+    // background-color: #25253299;
+  }
+
+  p {
+    color: #9e9e9e;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.vr_block_1,
+.vr_block_2,
+.vr_block_3 {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  width: 370px;
+  height: 290px;
+}
+
+.vr_block_1 {
+  margin-top: 46px;
+}
+
+.vr_block_2 {
+  margin-top: 92px;
+}
+
+.vr_block_3 {
+  margin-top: 138px;
+}
+
+.learnMore {
+  position: absolute;
+  bottom: -60px; /* Начальное положение кнопки (скрыта) */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  background: linear-gradient(to right, #00bcd4, #8e44ad); /* Градиент */
+  border: 1px solid transparent; /* Граница по умолчанию прозрачная */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  opacity: 0; /* Изначально кнопка прозрачна */
+  z-index: 2;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+.section {
+  margin-bottom: 520px;
+}
+
+.h1__our-service {
+  background-color: #25253299;
+}
+.vr {
+  width: 350px;
+  // height: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Три колонки
+  gap: 30px;
+  grid-auto-rows: 290px; // Все строки одной высоты
+}
+
+.vr {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vr_block_3:nth-child(1) {
+  .h1__our_service {
+    color: #fff;
+  }
+}
+.h1__our_service {
+  color: #fff;
+}
+
+.s.box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.s.vr_block_1,
+.s.vr_block_2,
+.s.vr_block_3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.s.vr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 calc(33.33% - 20px); // Равномерное распределение колонок
+  max-width: calc(33.33% - 20px); // Максимальная ширина
+  box-sizing: border-box;
+  height: 350px; // Фиксированная высота карточек
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden; // Предотвращает переполнение
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.s.vr img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; // Картинка адаптируется под контейнер
+  margin-bottom: 10px;
+}
+
+.s.h1__our_service {
+  font-size: 1.25rem;
+  margin: 10px 0;
+}
+
+.s.p p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.s.learnMore {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.s.learnMore:hover {
+  background-color: #0056b3;
+}
